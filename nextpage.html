@@ -3,78 +3,103 @@
 <head>
 <title>Next Page</title>
 <link rel="stylesheet" href="next.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body{
+    margin:0;
+    overflow:hidden;
+    font-family: Arial, sans-serif;
+    text-align:center;
+  }
+  #score{
+    font-size:25px;
+    margin:10px;
+  }
+  #basket{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    width:120px;
+    height:40px;
+    background:brown;
+    border-radius:20px;
+    transform:translateX(-50%);
+    touch-action:none; /* prevent touch scrolling */
+  }
+  .choco{
+    position:absolute;
+    width:40px;
+    height:40px;
+    background:red;
+    border-radius:50%;
+  }
+</style>
 </head>
 
 <body>
-
 
 <h1>IF YOU CAN CATCH ME🍫</h1>
 <div id="score">Score: 0</div>
 
 <div id="basket"></div>
 
-
-
 <script>
-
 let score = 0;
 let basket = document.getElementById("basket");
 
+// Desktop mouse movement
 document.addEventListener("mousemove",function(e){
-basket.style.left = e.clientX + "px";
+  basket.style.left = e.clientX + "px";
 });
 
+// Mobile touch movement
+document.addEventListener("touchmove", function(e){
+  let touch = e.touches[0];
+  basket.style.left = touch.clientX + "px";
+  e.preventDefault(); // prevent scrolling
+}, {passive:false});
+
 function createChocolate(){
+  let choco = document.createElement("div");
+  choco.classList.add("choco");
+  choco.style.left = Math.random() * (window.innerWidth - 40) + "px"; // stay inside screen
+  choco.style.top = "-50px"; // start above the screen
+  document.body.appendChild(choco);
 
-let choco = document.createElement("div");
-choco.classList.add("choco");
+  let fall = setInterval(function(){
+    let top = choco.offsetTop;
+    choco.style.top = top + 5 + "px";
 
-choco.style.left = Math.random()*window.innerWidth + "px";
+    let basketRect = basket.getBoundingClientRect();
+    let chocoRect = choco.getBoundingClientRect();
 
-document.body.appendChild(choco);
+    if(
+      chocoRect.bottom >= basketRect.top &&
+      chocoRect.left < basketRect.right &&
+      chocoRect.right > basketRect.left
+    ){
+      score++;
+      document.getElementById("score").innerHTML="Score: "+score;
+      choco.remove();
+      clearInterval(fall);
 
-let fall = setInterval(function(){
+      // Redirect after certain score
+      if(score == 27){
+        window.location.href="First.html";
+      }
+    }
 
-let top = choco.offsetTop;
-choco.style.top = top + 5 + "px";
+    // Remove if out of screen
+    if(top > window.innerHeight){
+      choco.remove();
+      clearInterval(fall);
+    }
 
-let basketRect = basket.getBoundingClientRect();
-let chocoRect = choco.getBoundingClientRect();
-
-if(
-chocoRect.bottom >= basketRect.top &&
-chocoRect.left < basketRect.right &&
-chocoRect.right > basketRect.left
-){
-
-score++;
-document.getElementById("score").innerHTML="Score: "+score;
-
-choco.remove();
-clearInterval(fall);
-
-/* OPEN NEXT PAGE AFTER 10 */
-if(score==27){
-window.location.href="First.html";
-}
-
-}
-
-if(top > window.innerHeight){
-choco.remove();
-clearInterval(fall);
-}
-
-},30)
-
+  },30);
 }
 
 setInterval(createChocolate,1200);
-
-
-
-
-
 </script>
 </body>
+</html>
 </html>
