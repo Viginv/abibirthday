@@ -10,10 +10,10 @@
 <div id="clock"></div>
 
 <script>
-function showClockAndRedirect() {
+function checkSaudiTime() {
     let now = new Date();
 
-    // Get Saudi Arabia time
+    // Convert to Saudi Arabia time
     let saudiTime = new Date(
         now.toLocaleString("en-US", { timeZone: "Asia/Riyadh" })
     );
@@ -22,7 +22,7 @@ function showClockAndRedirect() {
     let m = saudiTime.getMinutes();
     let s = saudiTime.getSeconds();
 
-    // Display the clock
+    // Display live clock
     document.getElementById("clock").innerHTML = 
         `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
 
@@ -32,8 +32,8 @@ function showClockAndRedirect() {
     }
 }
 
-// Update the clock every second
-setInterval(showClockAndRedirect, 1000);
+// Check every second
+setInterval(checkSaudiTime, 1000);
 </script>
 
 </body>
