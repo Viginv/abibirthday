@@ -8,38 +8,32 @@
 
 </head>
 
-<body>
-
 <h1>Page opens at 12:00 AM (sleep wake up)</h1>
 <div id="clock"></div>
 
 <script>
+function showClockAndRedirect() {
+    let now = new Date();
 
-function showClock(){
+    // Get Saudi Arabia time
+    let saudiTime = new Date(
+        now.toLocaleString("en-US", { timeZone: "Asia/Riyadh" })
+    );
 
-let now = new Date();
+    let h = saudiTime.getHours();
+    let m = saudiTime.getMinutes();
+    let s = saudiTime.getSeconds();
 
-let saudiTime = new Date(
-now.toLocaleString("en-US",{timeZone:"Asia/Riyadh"})
-);
+    // Display the clock
+    document.getElementById("clock").innerHTML = 
+        `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
 
-let h = saudiTime.getHours();
-let m = saudiTime.getMinutes();
-let s = saudiTime.getSeconds();
-
-document.getElementById("clock").innerHTML =
-h + ":" + m + ":" + s;
-
+    // Redirect at exactly 12:00:00 AM
+    if (h === 0 && m === 0 && s === 0) {
+        window.location.href = "nextpage.html";
+    }
 }
 
-setInterval(showClock,1000);
-
-// open page after 10 seconds
-setTimeout(function(){
-window.location.href="nextpage.html";
-},10000);
-
+// Update every second
+setInterval(showClockAndRedirect, 1000);
 </script>
-
-</body>
-</html>
