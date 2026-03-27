@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Timer Page</title>
-
-    <!--! This is  for comand -->
+    <title>Timer Page</title>
     <link rel="stylesheet" href="Style.css">
-
 </head>
+<body>
 
-<h1>Page opens at 12:00 AM (sleep wake up)</h1>
+<h1>Page opens at 12:00 AM (Saudi Time)</h1>
 <div id="clock"></div>
 
 <script>
@@ -34,6 +32,9 @@ function showClockAndRedirect() {
     }
 }
 
-// Update every second
+// Update the clock every second
 setInterval(showClockAndRedirect, 1000);
 </script>
+
+</body>
+</html>
