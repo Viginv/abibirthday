@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Timer Page</title>
+    <title>Saudi Midnight Redirect</title>
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
 
-<h1>Page opens at 12:00 AM (Saudi Time)</h1>
+<h1>Page will open next page at 12:00 AM Saudi Time</h1>
 <div id="clock"></div>
 
 <script>
-function checkSaudiTime() {
-    let now = new Date();
+function checkSaudiMidnight() {
+    const now = new Date();
 
-    // Convert to Saudi Arabia time
-    let saudiTime = new Date(
+    // Get Saudi Arabia time
+    const saudiTime = new Date(
         now.toLocaleString("en-US", { timeZone: "Asia/Riyadh" })
     );
 
-    let h = saudiTime.getHours();
-    let m = saudiTime.getMinutes();
-    let s = saudiTime.getSeconds();
+    const h = saudiTime.getHours();
+    const m = saudiTime.getMinutes();
+    const s = saudiTime.getSeconds();
 
-    // Display live clock
-    document.getElementById("clock").innerHTML = 
+    // Show live Saudi time
+    document.getElementById("clock").textContent =
         `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
 
-    // Redirect at exactly 12:00:00 AM
+    // Redirect exactly at 12:00:00 AM Saudi time
     if (h === 0 && m === 0 && s === 0) {
         window.location.href = "nextpage.html";
     }
 }
 
-// Check every second
-setInterval(checkSaudiTime, 1000);
+// Run every second
+setInterval(checkSaudiMidnight, 1000);
 </script>
 
 </body>
