@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Timer Page</title>
+
+    <!--! This is  for comand -->
+    <link rel="stylesheet" href="Style.css">
+
+</head>
+
+<body>
+
+<h1>Page opens at 12:00 AM (sleep wake up)</h1>
+<div id="clock"></div>
+
+<script>
+
+function showClock(){
+
+let now = new Date();
+
+let saudiTime = new Date(
+now.toLocaleString("en-US",{timeZone:"Asia/Riyadh"})
+);
+
+let h = saudiTime.getHours();
+let m = saudiTime.getMinutes();
+let s = saudiTime.getSeconds();
+
+document.getElementById("clock").innerHTML =
+h + ":" + m + ":" + s;
+
+}
+
+setInterval(showClock,1000);
+
+// open page after 10 seconds
+setTimeout(function(){
+window.location.href="nextpage.html";
+},10000);
+
+</script>
+
+</body>
+</html>

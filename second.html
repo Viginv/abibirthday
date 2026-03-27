@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birth day Girl</title>
+<link rel="stylesheet" href="second.css">
+</head>
+<body>
+<div class="bac_box">
+<div class="grid-container">
+
+<div class="box">
+<p> WHAT IS YOUR HAPPIEST MEMORY WITH ME?</p>
+<br>
+<br>
+<div class="options">
+
+<label><input type="radio" name="q1" value="MARTHANDAM BUS STOP"> MARTHANDAM BUS STOP</label>
+<label><input type="radio" name="q1" value="CHILD JESUS"> CHILD JESUS</label>
+<label><input type="radio" name="q1" value="NAGERCOIL BUS STOP"> NAGERCOIL BUS STOP</label>
+<label><input type="radio" name="q1" value="COIMBATHORE"> COIMBATHORE</label>
+
+</div>
+</div>
+
+<div class="box">
+<p>WHAT IS VIGIN HAPPINES  </p>
+<br>
+<br>
+<div class="options">
+<label><input type="radio" name="q2" value="DRVING REMOT CAR"> DRVING REMOT CAR</label>
+<label><input type="radio" name="q2" value="SLEEPING WITH YOU ">SLEEPING WITH YOU </label>
+<label><input type="radio" name="q2" value="WATCHIN CARTOON">WATCHIN CARTOON WITH YOU</label>
+<label><input type="radio" name="q2" value="EATING ">EATING  </label>
+</div>
+</div>
+
+<div class="box">  
+<p> YOU ARE  MY ?</p>
+<br>
+<br>
+<div class="options">
+<label><input type="radio" name="q3" value="WIFE"> WIFE</label>
+<label><input type="radio" name="q3" vlaue="WIFE FRIEND"> FRIEND</label>
+<label><input type="radio" name="q3" value="LOVER">LOVER</label>
+<label><input type="radio" name="q3" value="MY GIFT">MY GIFT</label>
+
+</div>    
+ </div> 
+ </div>
+  
+ <button onclick="checkAnswer()" class="button">Submit</button>
+ <button onclick="document.body.classList.toggle('dark')"  class="click_btn">one click!</button>
+
+</div>
+<div class="back-btn" onclick="goBack()">⬅</div>
+
+<script>
+function checkAnswer(){
+
+let q1 = document.querySelector('input[name="q1"]:checked')?.value;
+let q2 = document.querySelector('input[name="q2"]:checked')?.value;
+let q3 = document.querySelector('input[name="q3"]:checked')?.value;
+
+
+if(q1=="COIMBATHORE" && q2=="WATCHIN CARTOON" && q3=="MY GIFT")
+{
+window.location.href="Third.html";
+}
+else{
+alert("Wrong answer! Try again.");
+}
+}
+/*nest page*/
+function goBack(){
+window.location.href = "First.html";
+}
+</script>
+
+
+</body>
+</html>

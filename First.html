@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Betania+Patmos&display=swap" rel="stylesheet">
+    <title>Birth day Girl</title>
+    <!--! This is  for comand -->
+    <link rel="stylesheet" href="First.css">
+</head>
+<body>
+<div class="bc-img">
+<div class="wrapper">
+<div class="input-box">
+
+<input type="text" id="nameInput" placeholder="YOUR LOVELY PERSON NAME" required>
+</div>
+
+<button type="button" onclick="checkName()" class="btn">CLICK HERE ?</button>
+
+</form>
+</div>
+  </div>
+
+  <div class="back-btn" onclick="goBack()">⬅</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<title>Birthday Girl</title>
+<link rel="stylesheet" href="First.css">
+</head>
+
+<body>
+
+<div class="bc-img">
+
+<div class="wrapper" id="nameBox">
+
+<div class="input-box">
+<input type="text" id="nameInput" placeholder="YOUR LOVELY PERSON NAME" required>
+</div>
+
+<button type="button" onclick="checkName()" class="btn">
+CLICK HERE ?
+</button>
+
+</div>
+
+</div>
+
+<div class="back-btn" onclick="goBack()">⬅</div>
+
+<script>
+
+// when page loads
+window.onload = function(){
+
+let saved = localStorage.getItem("nameEntered");
+
+if(saved === "yes"){
+document.getElementById("nameBox").style.display="none";
+}
+
+}
+
+function checkName(){
+
+let name = document.getElementById("nameInput").value.toLowerCase();
+
+if(name === "anitha"){
+
+localStorage.setItem("nameEntered","yes");
+
+window.location.href="second.html";
+
+}
+else{
+alert("HI ABI YOU ENTER WRONG");
+}
+
+}
+
+function goBack(){
+window.location.href = "nextpage.html";
+}
+
+</script>
+
+</body>
+</html>
+</body>
+</html>

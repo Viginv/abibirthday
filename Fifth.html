@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Glowing Boom Box</title>
+<link rel="stylesheet" href="Fourth.css">
+</head>
+
+<body>
+
+<div class="box" onclick="boomEffect()"><a href="Third.html" class="link">Eruma</a></div>
+
+<script >
+    function boomEffect(){
+
+let box = document.querySelector(".box");
+
+box.classList.add("glow");
+
+/* remove glow after 1 second */
+setTimeout(()=>{
+box.classList.remove("glow");
+},1000);
+
+}
+</script>
+</body>
+</html>

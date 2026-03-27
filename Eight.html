@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thank You</title>
+<link rel="stylesheet" href="Eight.css">
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Thank You For Everything ❤️</h1>
+
+<p>You made my life beautiful  Give a Beautiful Memory .</p>
+
+<button onclick="fireHearts()">Click Here</button>
+
+</div>
+
+<div class="back-btn" onclick="goBack()">⬅</div>
+
+<script>
+
+function fireHearts(){
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.top="80vh";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},3000);
+
+}
+
+}
+
+  function goBack(){
+window.location.href = "Seven.html";
+}
+
+</script>
+
+</body>
+</html>

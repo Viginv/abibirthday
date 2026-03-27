@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday</title>
+
+<link rel="stylesheet " href="Seven.css">
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Happy Birthday My Love ❤️</h1>
+
+<a href="Eight.html" class="link"><p>Click to hear my message</p></a>
+
+<button onclick="playAudio()">Play Audio</button>
+
+<br><br>
+
+<audio id="audio">
+<source src="IMAGES/Seve/WhatsApp Video 2026-03-27 at 6.09.15 PM.mp4" type="audio/mpeg">
+</audio>
+
+</div>
+
+<div class="back-btn" onclick="goBack()">⬅</div>
+
+<script>
+
+function playAudio(){
+document.getElementById("audio").play();
+startHearts();
+}
+
+function startHearts(){
+
+setInterval(function(){
+
+let heart = document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},5000);
+
+},300);
+
+}
+
+
+
+  function goBack(){
+window.location.href = "Six.html";
+}
+</script>
+
+</body>
+</html>

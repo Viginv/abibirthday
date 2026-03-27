@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Next Page</title>
+<link rel="stylesheet" href="next.css">
+</head>
+
+<body>
+
+
+<h1>IF YOU CAN CATCH ME🍫</h1>
+<div id="score">Score: 0</div>
+
+<div id="basket"></div>
+
+
+
+<script>
+
+let score = 0;
+let basket = document.getElementById("basket");
+
+document.addEventListener("mousemove",function(e){
+basket.style.left = e.clientX + "px";
+});
+
+function createChocolate(){
+
+let choco = document.createElement("div");
+choco.classList.add("choco");
+
+choco.style.left = Math.random()*window.innerWidth + "px";
+
+document.body.appendChild(choco);
+
+let fall = setInterval(function(){
+
+let top = choco.offsetTop;
+choco.style.top = top + 5 + "px";
+
+let basketRect = basket.getBoundingClientRect();
+let chocoRect = choco.getBoundingClientRect();
+
+if(
+chocoRect.bottom >= basketRect.top &&
+chocoRect.left < basketRect.right &&
+chocoRect.right > basketRect.left
+){
+
+score++;
+document.getElementById("score").innerHTML="Score: "+score;
+
+choco.remove();
+clearInterval(fall);
+
+/* OPEN NEXT PAGE AFTER 10 */
+if(score==27){
+window.location.href="First.html";
+}
+
+}
+
+if(top > window.innerHeight){
+choco.remove();
+clearInterval(fall);
+}
+
+},30)
+
+}
+
+setInterval(createChocolate,1200);
+
+
+
+
+
+</script>
+</body>
+</html>

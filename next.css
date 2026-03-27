@@ -1,0 +1,89 @@
+body{
+margin:0;
+overflow:hidden;
+background:#2b2b2b;
+font-family:Arial, sans-serif;
+color:white;
+text-align:center;
+}
+
+/* Title */
+h1{
+margin-top:10px;
+font-size:2rem;
+}
+
+/* Score */
+#score{
+font-size:25px;
+margin:10px;
+}
+
+/* Basket */
+#basket{
+position:absolute;
+bottom:20px;
+left:50%;
+width:120px;
+height:40px;
+background:brown;
+border-radius:20px;
+transform:translateX(-50%);
+}
+
+/* Chocolate */
+.choco{
+position:absolute;
+top:-50px;
+width:40px;
+height:40px;
+background:#5a2d0c;
+border-radius:10px;
+}
+
+/* Tablet */
+@media (max-width:768px){
+
+h1{
+font-size:1.6rem;
+}
+
+#score{
+font-size:22px;
+}
+
+#basket{
+width:100px;
+height:35px;
+}
+
+.choco{
+width:35px;
+height:35px;
+}
+
+}
+
+/* Mobile */
+@media (max-width:480px){
+
+h1{
+font-size:1.3rem;
+}
+
+#score{
+font-size:20px;
+}
+
+#basket{
+width:80px;
+height:30px;
+bottom:15px;
+}
+
+.choco{
+width:30px;
+height:30px;
+}
+
+}

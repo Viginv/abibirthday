@@ -1,0 +1,83 @@
+
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#000000,#000000);
+font-family:Arial;
+overflow:hidden;
+}
+
+/* Card */
+.card{
+background:white;
+padding:40px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Heading animation */
+h1{
+color:#ff2e63;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px pink;}
+to{ text-shadow:0 0 25px red;}
+}
+
+/* Heart animation */
+.heart{
+position:absolute;
+color:red;
+font-size:25px;
+animation:float 5s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+button{
+padding:12px 25px;
+border:none;
+background:#ff2e63;
+color:white;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;
+}
+.link{
+    list-style-type: none;
+    color:black;
+    text-decoration: none;
+}
+
+
+/*nest btn*/
+
+.back-btn{
+position:fixed;
+top:20px;
+left:20px;
+font-size:28px;
+background:white;
+padding:8px 14px;
+border-radius:50%;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+cursor:pointer;
+z-index:1000;
+}
+
+.back-btn:hover{
+background:#ff2e63;
+color:white;
+}
+
+

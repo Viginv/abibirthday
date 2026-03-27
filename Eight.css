@@ -1,0 +1,78 @@
+
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#000000,#070003);
+font-family:Arial;
+overflow:hidden;
+}
+
+/* Box */
+.box{
+background:white;
+padding:40px;
+text-align:center;
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+h1{
+color:#ff2e63;
+}
+
+button{
+padding:12px 25px;
+border:none;
+background:#ff2e63;
+color:white;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;
+margin-top:20px;
+}
+
+/* Heart firework */
+.heart{
+position:absolute;
+font-size:30px;
+color:red;
+animation:fire 3s linear forwards;
+}
+
+@keyframes fire{
+
+0%{
+transform:translateY(0) scale(0.5);
+opacity:1;
+}
+
+100%{
+transform:translateY(-400px) scale(2);
+opacity:0;
+}
+
+}
+
+/*nest btn*/
+
+.back-btn{
+position:fixed;
+top:20px;
+left:20px;
+font-size:28px;
+background:white;
+padding:8px 14px;
+border-radius:50%;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+cursor:pointer;
+z-index:1000;
+}
+
+.back-btn:hover{
+background:#ff2e63;
+color:white;
+}
